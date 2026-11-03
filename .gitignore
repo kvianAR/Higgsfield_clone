@@ -1,0 +1,86 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+/test-results
+/playwright-report
+/.nyc_output
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+Thumbs.db
+*.pem
+*.key
+*.p12
+*.pfx
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+!.env.example
+
+# local credentials and provider configuration
+*service-account*.json
+*credentials*.json
+secrets/
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# generated media and local runtime state
+/downloads/
+/uploads/
+/tasks_history.json
+/tasks_history.json.tmp
+
+# local screenshots and temporary artifacts
+/image*.png
+/.tmp-*
+*.tmp
+
+# Local review reports, proposals and acceptance artifacts
+/.local-review/
+/concepts_brief.md
+
+# local AI/editor instructions
+/.agents/
+/.codex/
+/.claude/
+/.cursor/
+/.github/instructions/
+
+# CINQRA local runtime logs
+.cinqra-desktop.log
+/.cinqra-creative/
+/.cinqra-creative-jobs/
+
+/.cinqra-reliability/
+/dist/
+
+# Browser sessions and local verification artifacts
+/.playwright-cli/
+/output/

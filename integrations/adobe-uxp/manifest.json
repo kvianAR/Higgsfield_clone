@@ -1,0 +1,10 @@
+{
+  "manifestVersion": 5,
+  "id": "studio.cinqra.assets",
+  "name": "CINQRA Assets",
+  "version": "0.1.0",
+  "main": "index.html",
+  "host": [{ "app": "PS", "minVersion": "25.0.0" }],
+  "entrypoints": [{ "type": "panel", "id": "cinqraAssets", "label": { "default": "CINQRA Assets" }, "minimumSize": { "width": 260, "height": 360 }, "preferredDockedSize": { "width": 320, "height": 560 } }],
+  "requiredPermissions": { "network": { "domains": ["http://127.0.0.1:3017", "http://localhost:3017"] }, "localFileSystem": "plugin" }
+}

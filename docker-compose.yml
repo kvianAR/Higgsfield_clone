@@ -1,0 +1,13 @@
+services:
+  open-higgsfield:
+    build: .
+    ports:
+      - "127.0.0.1:3000:3000"
+    env_file:
+      - .env.local
+    volumes:
+      - open-higgsfield-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  open-higgsfield-data:

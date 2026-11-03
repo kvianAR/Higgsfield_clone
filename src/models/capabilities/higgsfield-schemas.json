@@ -1,0 +1,527 @@
+[
+  {
+    "id": "higgsfield__soul-v2",
+    "label": "SOUL V2",
+    "mediaType": "image",
+    "endpoint": "higgsfield-ai/soul/v2/standard",
+    "schema": {
+      "properties": {
+        "prompt": {
+          "title": "Prompt",
+          "type": "string"
+        },
+        "aspect_ratio": {
+          "default": "1:1",
+          "enum": [
+            "9:16",
+            "16:9",
+            "4:3",
+            "3:4",
+            "1:1",
+            "2:3",
+            "3:2"
+          ],
+          "title": "Aspect Ratio",
+          "type": "string"
+        },
+        "resolution": {
+          "default": "720p",
+          "enum": [
+            "720p",
+            "1080p"
+          ],
+          "title": "Resolution",
+          "type": "string"
+        },
+        "enhance_prompt": {
+          "default": false,
+          "title": "Enhance Prompt",
+          "type": "boolean"
+        },
+        "custom_reference_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Custom Reference Id"
+        },
+        "custom_reference_strength": {
+          "default": 1.0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Custom Reference Strength",
+          "type": "number"
+        },
+        "style_id": {
+          "default": "3db34ab5-3439-4317-9e03-08dc30852e69",
+          "format": "uuid",
+          "title": "Style Id",
+          "type": "string"
+        },
+        "style_strength": {
+          "default": 1.0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Style Strength",
+          "type": "number"
+        },
+        "seed": {
+          "maximum": 1000000,
+          "minimum": 1,
+          "title": "Seed",
+          "type": "integer"
+        },
+        "batch_size": {
+          "default": 1,
+          "enum": [
+            1,
+            4
+          ],
+          "title": "Batch Size",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "prompt"
+      ],
+      "title": "SoulV2ParamsSchema",
+      "type": "object"
+    },
+    "documentation": "https://docs.higgsfield.ai/docs/models/soul-2/generate"
+  },
+  {
+    "id": "higgsfield__soul",
+    "label": "SOUL Standard",
+    "mediaType": "image",
+    "endpoint": "higgsfield-ai/soul/standard",
+    "schema": {
+      "properties": {
+        "prompt": {
+          "title": "Prompt",
+          "type": "string"
+        },
+        "aspect_ratio": {
+          "default": "4:3",
+          "enum": [
+            "9:16",
+            "16:9",
+            "4:3",
+            "3:4",
+            "1:1",
+            "2:3",
+            "3:2"
+          ],
+          "title": "Aspect Ratio",
+          "type": "string"
+        },
+        "enhance_prompt": {
+          "default": false,
+          "title": "Enhance Prompt",
+          "type": "boolean"
+        },
+        "style_id": {
+          "default": "464ea177-8d40-4940-8d9d-b438bab269c7",
+          "format": "uuid",
+          "title": "Style Id",
+          "type": "string"
+        },
+        "style_strength": {
+          "default": 1.0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Style Strength",
+          "type": "number"
+        },
+        "resolution": {
+          "default": "720p",
+          "enum": [
+            "720p",
+            "1080p"
+          ],
+          "title": "Resolution",
+          "type": "string"
+        },
+        "seed": {
+          "anyOf": [
+            {
+              "maximum": 1000000,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Seed"
+        },
+        "custom_reference_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Custom Reference Id"
+        },
+        "custom_reference_strength": {
+          "default": 1.0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Custom Reference Strength",
+          "type": "number"
+        },
+        "image_reference_url": {
+          "anyOf": [
+            {
+              "format": "uri",
+              "maxLength": 2083,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Image Reference Url"
+        },
+        "batch_size": {
+          "default": 1,
+          "enum": [
+            1,
+            4
+          ],
+          "title": "Batch Size",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "prompt"
+      ],
+      "title": "SoulParamsSchema",
+      "type": "object"
+    },
+    "documentation": "https://docs.higgsfield.ai/docs/models/soul-standard/generate"
+  },
+  {
+    "id": "higgsfield__seedance-2.5",
+    "label": "Seedance 2.5",
+    "mediaType": "video",
+    "endpoint": "bytedance/seedance-2.5/text-to-video",
+    "schema": {
+      "type": "object",
+      "required": [
+        "prompt"
+      ],
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Write your prompt here"
+        },
+        "duration": {
+          "type": "integer",
+          "default": 5,
+          "maximum": 30,
+          "minimum": 4
+        },
+        "resolution": {
+          "enum": [
+            "480p",
+            "720p",
+            "1080p"
+          ],
+          "type": "string",
+          "default": "720p"
+        },
+        "aspect_ratio": {
+          "enum": [
+            "16:9",
+            "4:3",
+            "1:1",
+            "3:4",
+            "9:16",
+            "21:9"
+          ],
+          "type": "string",
+          "default": "16:9"
+        },
+        "bitrate_mode": {
+          "enum": [
+            "standard",
+            "high"
+          ],
+          "type": "string",
+          "default": "high"
+        },
+        "output_format": {
+          "enum": [
+            "mp4",
+            "mov"
+          ],
+          "type": "string",
+          "default": "mp4"
+        },
+        "generate_audio": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "documentation": "https://docs.higgsfield.ai/docs/models/seedance-2-5/text-to-video"
+  },
+  {
+    "id": "higgsfield__wan-3.0",
+    "label": "Wan 3.0",
+    "mediaType": "video",
+    "endpoint": "alibaba/wan-3.0/text-to-video",
+    "schema": {
+      "type": "object",
+      "title": "Wan 3.0 Text to Video",
+      "required": [
+        "prompt"
+      ],
+      "properties": {
+        "seed": {
+          "type": "integer",
+          "title": "Seed",
+          "maximum": 2147483647,
+          "minimum": 0
+        },
+        "prompt": {
+          "type": "string",
+          "title": "Prompt",
+          "description": "Write your prompt here"
+        },
+        "duration": {
+          "type": "integer",
+          "title": "Duration (sec)",
+          "default": 5,
+          "maximum": 30,
+          "minimum": 2,
+          "description": "2-30 seconds."
+        },
+        "resolution": {
+          "enum": [
+            "480p",
+            "720p",
+            "1080p"
+          ],
+          "type": "string",
+          "title": "Resolution",
+          "default": "1080p"
+        },
+        "aspect_ratio": {
+          "enum": [
+            "16:9",
+            "4:3",
+            "1:1",
+            "3:4",
+            "9:16",
+            "adaptive"
+          ],
+          "type": "string",
+          "title": "Aspect Ratio",
+          "default": "adaptive"
+        },
+        "generate_audio": {
+          "type": "boolean",
+          "title": "Sound",
+          "default": true
+        },
+        "enable_thinking": {
+          "type": "boolean",
+          "title": "Deep Thinking",
+          "default": false
+        }
+      }
+    },
+    "documentation": "https://docs.higgsfield.ai/docs/models/wan-3/text-to-video"
+  },
+  {
+    "id": "higgsfield__minimax-h3",
+    "label": "MiniMax H3",
+    "mediaType": "video",
+    "endpoint": "minimax/h3/text-to-video",
+    "schema": {
+      "type": "object",
+      "title": "MiniMax H3 Text to Video Playground",
+      "required": [
+        "prompt"
+      ],
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "title": "Prompt",
+          "minLength": 1,
+          "description": "Write your prompt here"
+        },
+        "duration": {
+          "type": "integer",
+          "title": "Duration",
+          "default": 5,
+          "maximum": 15,
+          "minimum": 5
+        },
+        "resolution": {
+          "enum": [
+            "2K"
+          ],
+          "type": "string",
+          "title": "Resolution",
+          "default": "2K"
+        },
+        "aspect_ratio": {
+          "enum": [
+            "auto",
+            "adaptive",
+            "21:9",
+            "16:9",
+            "4:3",
+            "1:1",
+            "3:4",
+            "9:16"
+          ],
+          "type": "string",
+          "title": "Aspect ratio",
+          "default": "auto"
+        },
+        "aigc_watermark": {
+          "type": "boolean",
+          "title": "AIGC watermark",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "documentation": "https://docs.higgsfield.ai/docs/models/minimax-h3/text-to-video"
+  },
+  {
+    "id": "higgsfield__hailuo-2.3",
+    "label": "Hailuo 2.3 Standard",
+    "mediaType": "video",
+    "endpoint": "minimax/hailuo-2.3/standard/text-to-video",
+    "schema": {
+      "type": "object",
+      "title": "Minimax Hailuo 2.3 Playground",
+      "required": [
+        "prompt"
+      ],
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "title": "Prompt",
+          "description": "Write your prompt here"
+        },
+        "duration": {
+          "enum": [
+            6,
+            10
+          ],
+          "type": "integer",
+          "title": "Duration",
+          "default": 6
+        },
+        "prompt_optimizer": {
+          "type": "boolean",
+          "title": "Prompt optimizer",
+          "default": true
+        }
+      }
+    },
+    "documentation": "https://docs.higgsfield.ai/docs/models/hailuo-2-3/standard-text-to-video"
+  },
+  {
+    "id": "higgsfield__kling-3-pro",
+    "label": "Kling 3.0 Pro",
+    "mediaType": "video",
+    "endpoint": "kling-video/v3.0/pro/text-to-video",
+    "schema": {
+      "type": "object",
+      "title": "Kling 3.0 Playground",
+      "properties": {
+        "sound": {
+          "enum": [
+            "on",
+            "off"
+          ],
+          "type": "string",
+          "title": "Generate sound",
+          "default": "on"
+        },
+        "prompt": {
+          "type": "string",
+          "title": "Prompt",
+          "description": "Write your prompt here"
+        },
+        "duration": {
+          "type": "integer",
+          "title": "Duration",
+          "default": 5,
+          "maximum": 15,
+          "minimum": 3
+        },
+        "elements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cfg_scale": {
+          "type": "number",
+          "title": "CFG Scale",
+          "default": 0.5,
+          "maximum": 1,
+          "minimum": 0,
+          "multipleOf": 0.01
+        },
+        "multi_shots": {
+          "type": "boolean",
+          "default": false
+        },
+        "aspect_ratio": {
+          "enum": [
+            "16:9",
+            "9:16",
+            "1:1"
+          ],
+          "type": "string",
+          "title": "Aspect ratio",
+          "default": "16:9"
+        },
+        "multi_prompt": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "prompt": {
+                "type": "string",
+                "maxLength": 512
+              },
+              "duration": {
+                "type": "integer",
+                "maximum": 15,
+                "minimum": 1
+              }
+            }
+          },
+          "maxItems": 6,
+          "minItems": 0
+        }
+      }
+    },
+    "documentation": "https://docs.higgsfield.ai/docs/models/kling-3/pro-text-to-video"
+  }
+]
