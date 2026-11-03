@@ -44,7 +44,7 @@
     "@ai-sdk/gateway": "^4.0.126",
     "@base-ui/react": "^1.9.0",
     "@google/genai": "^2.31.0",
-    "@hookform/resolvers": "^5.9.1",
+    "@hookform/resolvers": "^6.0.2",
     "@neondatabase/serverless": "^1.2.0",
     "ai": "^7.0.153",
     "class-variance-authority": "^0.7.1",
